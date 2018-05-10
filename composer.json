@@ -1,0 +1,17 @@
+{
+    "name": "lrf141/rook",
+    "description": "A simple template engine written in PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lrf141",
+            "email": "ghost141.kentyo@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.1"
+    }
+}
