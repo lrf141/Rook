@@ -13,5 +13,10 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "lrf141\\Rook\\": "src"
+        }
     }
 }
