@@ -10,13 +10,16 @@
         }
     ],
     "require": {
+        "php": "^5.6 || ^7.0",
+        "ext-curl": "*",
+        "league/container": "^2.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.1"
     },
     "autoload": {
         "psr-4": {
-            "Lrf141\\Rook\\": "src"
+            "Lrf141\\Rook\\": "src/"
         }
     }
 }
