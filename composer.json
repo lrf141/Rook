@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "lrf141\\Rook\\": "src"
+            "Lrf141\\Rook\\": "src"
         }
     }
 }
