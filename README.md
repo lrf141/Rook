@@ -1,2 +1,1 @@
-# Rook
-A simple template engine written in PHP
+# php-devenv
