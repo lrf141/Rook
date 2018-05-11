@@ -10,6 +10,7 @@ class Template {
 
     private $engine;
     private $name;
+    private $sections = array();
 
     public function __construct(Engine $engine, string $name)
     {
@@ -23,11 +24,7 @@ class Template {
         try{
             $level = ob_get_level();
             ob_start();
-            echo "hello\n"
-?>
-            <h1>hello, PHP template engine!!</h1>
-<?php
-            $content = ob_get_flush();
+            $content = ob_get_clean();
             return $content;
         }catch (Throwable $e) {
             while (ob_get_level() > $level){
