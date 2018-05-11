@@ -6,8 +6,8 @@ use LogicException;
 use Throwable;
 use Exception;
 
-class Template {
-
+class Template
+{
     private $engine;
     private $name;
     private $sections = array();
@@ -20,25 +20,25 @@ class Template {
     }
 
 
-    public function render(array $data = []): string 
+    public function render(array $data = []): string
     {
         $this->data($data);
         unset($data);
         extract($this->data);
 
-        try{
+        try {
             $level = ob_get_level();
             ob_start();
             $content = ob_get_clean();
             include $this->path();
             return $content;
-        }catch (Throwable $e) {
-            while (ob_get_level() > $level){
+        } catch (Throwable $e) {
+            while (ob_get_level() > $level) {
                 ob_end_clean();
             }
             throw $e;
-        }catch (Exception $e) {
-            while (ob_get_level() > $level){
+        } catch (Exception $e) {
+            while (ob_get_level() > $level) {
                 ob_end_clean();
             }
             throw $e;
@@ -47,7 +47,7 @@ class Template {
 
     public function data(array $data = null)
     {
-        if (is_null($data)){
+        if (is_null($data)) {
             return $this->data;
         }
 

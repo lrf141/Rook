@@ -4,11 +4,12 @@ namespace Lrf141\Rook;
 
 use LogicException;
 
-class Directory{
-
+class Directory
+{
     private $path;
 
-    public function __construct(string $path = null){
+    public function __construct(string $path = null)
+    {
         $this->set($path);
     }
 

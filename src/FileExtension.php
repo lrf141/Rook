@@ -2,10 +2,8 @@
 
 namespace Lrf141\Rook;
 
-
 class FileExtension
 {
-
     private $fileExtension;
 
     public function __construct(string $fileExtension = 'php')
@@ -22,7 +20,4 @@ class FileExtension
     {
         return $this->fileExtension;
     }
-
-
-
 }

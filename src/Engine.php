@@ -2,9 +2,8 @@
 
 namespace Lrf141\Rook;
 
-class Engine {
-
-
+class Engine
+{
     private $directory;
     private $fileExtension;
     
@@ -33,5 +32,4 @@ class Engine {
     {
         return $this->fileExtension;
     }
-
 }
