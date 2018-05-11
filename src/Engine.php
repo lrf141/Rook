@@ -14,7 +14,7 @@ class Engine {
         $this->fileExtension = new FileExtension($ext);
     }
 
-    public function make(string $name)
+    public function make(string $name): Template
     {
         return new Template($this, $name);
     }

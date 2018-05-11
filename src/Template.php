@@ -19,7 +19,7 @@ class Template {
     }
 
 
-    public function render(array $data = []) 
+    public function render(array $data = []): string 
     {
         try{
             $level = ob_get_level();
