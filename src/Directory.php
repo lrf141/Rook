@@ -14,7 +14,7 @@ class Directory{
 
     public function set(string $path)
     {
-        if (is_null($path) || is_dir($path)) {
+        if (is_null($path) || !is_dir($path)) {
             throw new LogicException('the path "' . $path . '" does not exist!!');
         }
 
@@ -25,6 +25,4 @@ class Directory{
     {
         return $this->path;
     }
-
-
 }

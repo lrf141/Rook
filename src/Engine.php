@@ -24,4 +24,14 @@ class Engine {
         return $this->make($template)->render($data);
     }
 
+    public function getDirectory(): Directory
+    {
+        return $this->directory;
+    }
+
+    public function getFileExtension(): FileExtension
+    {
+        return $this->fileExtension;
+    }
+
 }
