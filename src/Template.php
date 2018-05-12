@@ -15,7 +15,7 @@ class Template
     private $engine;
 
     /**
-     * @var string
+     * @var Name
      */
     private $name;
 
@@ -37,7 +37,7 @@ class Template
     public function __construct(Engine $engine, string $name)
     {
         $this->engine = $engine;
-        $this->name = $name;
+        $this->name = new Name($name);
     }
 
 
@@ -99,7 +99,8 @@ class Template
     {
         $dir = $this->engine->getDirectory()->get();
         $ext = $this->engine->getFileExtension()->get();
-        $path = $dir . '/' . $this->name . '.' . $ext;
+        $name = $this->name->get();
+        $path = $dir . '/' . $name . '.' . $ext;
 
         if (!$this->isExist($path)) {
             throw LogicException(
