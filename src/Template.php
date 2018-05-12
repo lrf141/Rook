@@ -8,11 +8,32 @@ use Exception;
 
 class Template
 {
+
+    /**
+     * @var Engine
+     */
     private $engine;
+
+    /**
+     * @var string
+     */
     private $name;
+
+    /**
+     * @var array
+     */
     private $sections = array();
+
+    /**
+     * @var array
+     */
     private $data = array();
 
+    /**
+     * generate new Template Instance
+     * @param Engine $engine
+     * @param string $name
+     */
     public function __construct(Engine $engine, string $name)
     {
         $this->engine = $engine;
@@ -20,17 +41,28 @@ class Template
     }
 
 
+    /**
+     * rendering based on template 
+     * @param array $data
+     * @return string
+     */
     public function render(array $data = []): string
     {
+
+        //expands array as var
         $this->data($data);
         unset($data);
         extract($this->data);
 
         try {
             $level = ob_get_level();
+
+            //dump buffer
             ob_start();
-            $content = ob_get_clean();
             include $this->path();
+            
+            $content = ob_get_clean();
+            
             return $content;
         } catch (Throwable $e) {
             while (ob_get_level() > $level) {
@@ -45,6 +77,11 @@ class Template
         }
     }
 
+    /**
+     * add data
+     * @param array $data
+     * @return array|none
+     */
     public function data(array $data = null)
     {
         if (is_null($data)) {
@@ -54,6 +91,10 @@ class Template
         $this->data = array_merge($this->data, $data);
     }
 
+    /**
+     * generate path
+     * @return string
+     */
     public function path(): string
     {
         $dir = $this->engine->getDirectory()->get();
@@ -69,6 +110,11 @@ class Template
         return $path;
     }
 
+    /**
+     * check the path is true
+     * @param string $path
+     * @return bool
+     */
     public function isExist(string $path): bool
     {
         return file_exists($path);
