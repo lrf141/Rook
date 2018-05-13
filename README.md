@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/lrf141/rook.svg?branch=master)](https://travis-ci.org/lrf141/rook)
 # Rook
 A simple template engine written in PHP
 
