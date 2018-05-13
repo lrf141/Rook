@@ -120,4 +120,14 @@ class Template
     {
         return file_exists($path);
     }
+
+    /**
+     * escape render text using htmlspecialchars
+     * @param string $contents 
+     * @return string
+     */
+    public function escape(string $contents): string
+    {
+        return htmlspecialchars($contents, ENT_QUOTES);
+    }
 }
