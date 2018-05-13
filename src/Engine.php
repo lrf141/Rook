@@ -29,7 +29,7 @@ class Engine
 
     /**
      * generate Template
-     * 
+     *
      * @param string $name template name
      * @return Template
      *

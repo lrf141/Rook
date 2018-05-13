@@ -4,8 +4,8 @@ use PHPUnit\Framework\TestCase;
 use Lrf141\Rook\Template;
 use Lrf141\Rook\Engine;
 
-class TemplateTest extends TestCase{
-
+class TemplateTest extends TestCase
+{
     public function testEscape()
     {
         $engine = new Engine("template/sample");
@@ -16,5 +16,4 @@ class TemplateTest extends TestCase{
 
         $this->assertSame($expect, $escape);
     }
-
 }

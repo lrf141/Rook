@@ -2,12 +2,11 @@
 
 namespace Lrf141\Rook;
 
-
 /**
  * manage template name
  */
-class Name{
-
+class Name
+{
     private $name;
 
     /**
@@ -37,5 +36,4 @@ class Name{
     {
         return $this->name;
     }
-
 }

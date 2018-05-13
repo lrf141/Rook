@@ -40,7 +40,7 @@ class Directory
 
     /**
      * get path to directory
-     * @return string 
+     * @return string
      */
     public function get(): string
     {

@@ -42,7 +42,7 @@ class Template
 
 
     /**
-     * rendering based on template 
+     * rendering based on template
      * @param array $data
      * @return string
      */
@@ -123,7 +123,7 @@ class Template
 
     /**
      * escape render text using htmlspecialchars
-     * @param string $contents 
+     * @param string $contents
      * @return string
      */
     public function escape(string $contents): string
