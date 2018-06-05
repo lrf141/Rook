@@ -140,10 +140,8 @@ class Template
     public function _link(string $path, array $param = []): string
     {
         $query = '';
-        if (count($param))
-        {
-            foreach($param as $key => $val)
-            {
+        if (count($param)) {
+            foreach ($param as $key => $val) {
                 $query .= $query ? '&' : '?';
                 $query .= $key . '=' . urlencode($val);
             }
