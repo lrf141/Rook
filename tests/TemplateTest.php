@@ -16,4 +16,17 @@ class TemplateTest extends TestCase
 
         $this->assertSame($expect, $escape);
     }
+
+    public function testGenerateLink()
+    {
+        $engine = new Engine('template/sample');
+        $template = new Template($engine, 'test');
+
+        $simple_link = $template->_link('/sample');
+        $this->assertSame($simple_link, '/sample');
+
+        $param = ['hello' => 'hello"', 'param' => 'test '];
+        $link_with_param = $template->_link('/sample', $param);
+        $this->assertSame($link_with_param, '/sample?hello=hello%22&param=test+');
+    }
 }

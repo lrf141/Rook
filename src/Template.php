@@ -130,4 +130,36 @@ class Template
     {
         return htmlspecialchars($contents, ENT_QUOTES);
     }
+
+    /**
+     * generate link
+     * @param string $path
+     * @param array $param
+     * @return string
+     */
+    public function _link(string $path, array $param = []): string
+    {
+        $query = '';
+        if (count($param))
+        {
+            foreach($param as $key => $val)
+            {
+                $query .= $query ? '&' : '?';
+                $query .= $key . '=' . urlencode($val);
+            }
+        }
+        return $path . $query;
+    }
+
+    /**
+     * generate external link
+     * @param string $base
+     * @param string $path
+     * @param array $param
+     * @return string
+     */
+    public function _exlink(string $base = '', string $path, array $param =[]): string
+    {
+        return _link($base . $path, $param);
+    }
 }
